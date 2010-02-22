@@ -30,8 +30,13 @@ public class NetworkManager {
 	public boolean isWifiActive()
 	{
 		NetworkInfo info = sockMan.getActiveNetworkInfo();
-		String type = info.getTypeName();
-		return type.equals("WIFI");
+		String type = "";
+                if (info!=null)
+                {
+                   info.getTypeName();
+                   return type.equals("WIFI")
+                }
+		return false;
 	}
 	
 	public boolean isReachable(String uri)
